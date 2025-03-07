@@ -1,5 +1,15 @@
 local options = {
-    ensure_installed = { "lua", "luadoc", "printf", "vim", "vimdoc" },
+    ensure_installed = {
+        "bash",
+        "lua",
+        "luadoc",
+        "markdown",
+        "printf",
+        "toml",
+        "vim",
+        "vimdoc",
+        "yaml",
+    },
 
     hightlight = {
         enable = true,
@@ -9,4 +19,4 @@ local options = {
     indent = { enable = true },
 }
 
-return options
+require("nvim-treesitter.configs").setup(options)
