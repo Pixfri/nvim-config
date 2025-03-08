@@ -11,7 +11,7 @@ lspconfig.servers = {
 }
 
 -- List of servers configured with default config.
-local default_servers = { "clangd" }
+local default_servers = {}
 
 -- lsps with default config
 for _, lsp in ipairs(default_servers) do
@@ -21,6 +21,17 @@ for _, lsp in ipairs(default_servers) do
         capabilities = capabilities,
     })
 end
+
+lspconfig.clangd.setup({
+    on_attach = function(client)
+        -- Disable the default formatter (we use clang-format instead)
+        client.server_capabilities.documentFormattingProvider = false
+        client.server_capabilities.documentRangeFormattingProvider = false
+        on_attach(client)
+    end,
+    on_init = on_init,
+    capabilities = capabilities,
+})
 
 lspconfig.lua_ls.setup({
     on_attach = on_attach,
