@@ -59,4 +59,35 @@ return {
         "christoomey/vim-tmux-navigator",
         lazy = false,
     },
+
+    {
+        "mfussenegger/nvim-dap",
+    },
+
+    {
+        "nvim-neotest/nvim-nio",
+    },
+
+    {
+        "rcarriga/nvim-dap-ui",
+        event = "VeryLazy",
+        dependencies = "mfussenegger/nvim-dap",
+        config = function()
+            require("configs.nvim-dap-ui")
+        end,
+    },
+
+    {
+        "jay-babu/mason-nvim-dap.nvim",
+        event = "VeryLazy",
+        dependencies = {
+            "mfussenegger/nvim-dap",
+        },
+        opts = {
+            handlers = {},
+            ensure_installed = {
+                "codelldb",
+            },
+        },
+    },
 }

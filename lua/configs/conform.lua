@@ -1,7 +1,7 @@
 local options = {
     formatters_by_ft = {
         lua = { "stylua" },
-        c_cpp = { "clang-format" }, -- Hack to force download, conform doesn't actually care about the "c_cpp"
+        c_cpp = { "clang-format" }, -- Hack to force download, conform doesn't actually care about "c_cpp"
         c = { "clang_format" }, -- Actual name for configuration
         cpp = { "clang_format" },
     },
