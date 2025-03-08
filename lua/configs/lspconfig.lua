@@ -6,11 +6,12 @@ local lspconfig = require("lspconfig")
 
 -- List of all servers configured.
 lspconfig.servers = {
+    "clangd",
     "lua_ls",
 }
 
 -- List of servers configured with default config.
-local default_servers = {}
+local default_servers = { "clangd" }
 
 -- lsps with default config
 for _, lsp in ipairs(default_servers) do

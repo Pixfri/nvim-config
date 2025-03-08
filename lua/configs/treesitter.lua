@@ -1,8 +1,12 @@
 local options = {
     ensure_installed = {
         "bash",
+        "c",
+        "cmake",
+        "cpp",
         "lua",
         "luadoc",
+        "make",
         "markdown",
         "printf",
         "toml",
@@ -19,4 +23,4 @@ local options = {
     indent = { enable = true },
 }
 
-require("nvim-treesitter.configs").setup(options)
+return options
