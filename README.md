@@ -47,3 +47,7 @@ git clone https://github.com/Pixfri/nvim-config $ENV:USERPROFILE\AppData\Local\n
 
 Then run the `:MasonInstallAll` command after lazy.nvim finished downloading plugins.
 Delete the `.git` folder if you want to make your own modifications to the config.
+
+[!NOTE]
+
+If you want python debugging support, you should install the `debugpy` module.
