@@ -58,10 +58,16 @@ return {
     {
         "christoomey/vim-tmux-navigator",
         lazy = false,
+        config = function()
+            require("configs.vim-tmux-navigator")
+        end,
     },
 
     {
         "mfussenegger/nvim-dap",
+        config = function()
+            require("configs.dap")
+        end,
     },
 
     {
@@ -71,9 +77,24 @@ return {
     {
         "rcarriga/nvim-dap-ui",
         event = "VeryLazy",
-        dependencies = "mfussenegger/nvim-dap",
+        dependencies = {
+            "mfussenegger/nvim-dap",
+            "nvim-neotest/nvim-nio",
+        },
         config = function()
-            require("configs.nvim-dap-ui")
+            require("configs.dap-ui")
+        end,
+    },
+
+    {
+        "mfussenegger/nvim-dap-python",
+        ft = "python",
+        dependencies = {
+            "mfussenegger/nvim-dap",
+            "rcarriga/nvim-dap-ui",
+        },
+        config = function()
+            require("configs.dap-python")
         end,
     },
 
@@ -82,12 +103,6 @@ return {
         event = "VeryLazy",
         dependencies = {
             "mfussenegger/nvim-dap",
-        },
-        opts = {
-            handlers = {},
-            ensure_installed = {
-                "codelldb",
-            },
         },
     },
 }
