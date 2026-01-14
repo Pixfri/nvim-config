@@ -134,9 +134,4 @@ return {
       { "<leader>F", mode = "n", "<cmd>Fugit2<CR>" },
     },
   },
-
-  {
-    "wakatime/vim-wakatime",
-    lazy = false,
-  },
 }
