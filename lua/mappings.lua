@@ -68,7 +68,7 @@ map("n", "<Leader>q", "<cmd>BufDel<CR>", { desc = "Close buffer" })
 map("n", "<Leader>Q", "<cmd>BufDel!<CR>", { desc = "Close buffer ignore changes" })
 
 -- Buffer line
-map("n", "<TAB>", "<C-i>") -- Keep <C-i> for jump forward
+-- map("n", "<TAB>", "<C-i>") -- Keep <C-i> for jump forward
 map("n", "L", function()
   require("nvchad.tabufline").next()
 end, { desc = "Go to next buffer" })

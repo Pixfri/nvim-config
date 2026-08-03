@@ -134,4 +134,11 @@ return {
       { "<leader>F", mode = "n", "<cmd>Fugit2<CR>" },
     },
   },
+
+  {
+    "tarides/ocaml.nvim",
+    config = function()
+      require("ocaml").setup()
+    end,
+  },
 }
